@@ -1,23 +1,33 @@
 import Img from '@/shared/Img';
 import { ComeOverVariants, HeadingVariants } from '@/utils/framerVariants';
+import useWindowDimensions from '@/utils/useWindowDimension';
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ComeOver = () => {
+  const { width } = useWindowDimensions();
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    width && width > 768 ? setIsMobile(false) : setIsMobile(true);
+  }, [width]);
   return (
     <div className=''>
       <div className='max-w-[1240px] px-5 mx-auto'>
         <motion.div
           viewport={{ once: false }}
-          variants={HeadingVariants.TEXT}
+          variants={
+            width && width > 768
+              ? HeadingVariants.TEXT
+              : HeadingVariants.NO_ANIMATION
+          }
           whileInView='show'
           initial='hidden'
-          className='md:text-[201px] text-[100px] font-sensei md:ml-48 leading-[264px] text-secondary'
+          className='md:text-[201px] text-[80px] md:leading-[264px] leading-[80px] font-sensei lg:ml-48 text-secondary'
         >
           Come
         </motion.div>
-        <div className='md:flex w-fit mx-auto mt-5 relative'>
-          <div>
+        <div className='flex md:flex-row flex-col gap-y-10 w-fit mx-auto relative'>
+          <div className='md:order-1 order-2'>
             <motion.div
               viewport={{ once: false }}
               variants={ComeOverVariants.PEOPLE}
@@ -39,14 +49,14 @@ const ComeOver = () => {
               width={1240}
               height={263}
               isLocal
-              className='-mt-10 sm:hidden'
+              className='-mt10 sm:hidden'
             />
           </div>
-          <div className='max-w-[526px] max-[768px]:mt-20'>
-            <div className='text-5xl font-bold text-secondary'>
+          <div className='md:max-w-[526px] md:order-2'>
+            <div className='lg:text-5xl text-[30px] sm:leading-normal leading-9 font-extrabold text-secondary'>
               over and look around.
             </div>
-            <p className='text-lg mt-5 line-clamp-5'>
+            <p className='lg:text-lg lg:mt-5 mt-3 line-clamp-5'>
               We will explain everything you are interested. Join our new
               session. If you have any questions or enquiries please feel free
               to contact us on the following details provided below or
@@ -64,11 +74,11 @@ const ComeOver = () => {
           className='-mt-24 sm:block hidden'
         />
 
-        <div className='text-5xl font-bold text-secondary'>
-                We are spread across Haryana
-            </div>
+        <div className='md:text-5xl text-[30px] font-bold text-secondary md:mt-0 mt-10'>
+          We are spread across Haryana
+        </div>
 
-        <div className='grid place-items-center md:pt-40 pt-20 max-[640px]:text-center lg:grid-cols-5 sm:grid-cols-3 grid-cols-1 gap-y-10 text-xl text-secondary font-extrabold md:-mt-10'>
+        <div className='grid place-items-center md:pt-40 pt-10 max-[640px]:text-center lg:grid-cols-5 sm:grid-cols-3 grid-cols-1 gap-y-10 text-xl text-secondary font-extrabold md:-mt-10'>
           <div className='max-w-[100px]'>
             Nimriwali<br></br>
           </div>
@@ -80,7 +90,8 @@ const ComeOver = () => {
           </div>
           <div className='max-w-[100px]'>
             Dadri<br></br>
-          </div><div className='max-w-[100px]'>
+          </div>
+          <div className='max-w-[100px]'>
             Dinod<br></br>
           </div>
           <div className='max-w-[100px]'>
@@ -109,10 +120,12 @@ const ComeOver = () => {
 
         <motion.div
           viewport={{ once: false }}
-          variants={ComeOverVariants.BEE}
+          variants={
+            !isMobile ? ComeOverVariants.BEE : ComeOverVariants.NO_ANIMATION
+          }
           whileInView='show'
           initial='hidden'
-          className='w-fit md:block hidden'
+          className='w-fit mx-auto'
         >
           <Img
             src='/images/snail.svg'
@@ -120,7 +133,7 @@ const ComeOver = () => {
             width={408}
             height={66}
             isLocal
-            className='my-14 left-40 relative'
+            className='my-14 md:left-40 relative md:block hidden'
           />
         </motion.div>
       </div>

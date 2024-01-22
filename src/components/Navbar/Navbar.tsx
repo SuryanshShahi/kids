@@ -34,7 +34,7 @@ const Navbar = () => {
         <div className='flex items-center gap-x-4'>
           <div className='font-bold text-[#167287] gap-x-4 min-w-[172px] sm:flex items-center hidden'>
             <FaPhoneAlt />
-            +91 92530 45190
+            +1 541-754-3010​
           </div>
           <Button
             onClick={() => router.push('/book-visit')}

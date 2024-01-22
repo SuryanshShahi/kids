@@ -1,19 +1,25 @@
 import Button from '@/shared/Button/Button';
 import Img from '@/shared/Img';
 import { HeadingVariants } from '@/utils/framerVariants';
+import useWindowDimensions from '@/utils/useWindowDimension';
 import { motion } from 'framer-motion';
 import React from 'react';
 
 const HappyKids = () => {
+  const { width } = useWindowDimensions();
   return (
     <div>
       <div className='max-w-[1160px] px-5 mx-auto'>
         <motion.div
           viewport={{ once: false }}
-          variants={HeadingVariants.TEXT}
+          variants={
+            width && width > 768
+              ? HeadingVariants.TEXT
+              : HeadingVariants.NO_ANIMATION
+          }
           whileInView='show'
           initial='hidden'
-          className='md:text-[201px] text-[100px] font-sensei leading-[264px] text-secondary md:ml-20'
+          className='md:text-[201px] sm:text-[100px] text-[80px] font-sensei leading-[264px] text-secondary md:ml-20'
         >
           Happy
         </motion.div>
@@ -37,7 +43,9 @@ const HappyKids = () => {
                 className='w-full rounded-2xl h-[252px] animate-pulse'
               />
               <div className='bg-[rgb(0,0,0,0.3)] flex flex-col justify-end items-center gap-3 p-5 w-full top-0 z-40 absolute rounded-2xl h-[252px]'>
-                <div className='text-xl font-bold text-white'>Megan TimberLand</div>
+                <div className='text-xl font-bold text-white'>
+                  Megan TimberLand
+                </div>
                 <Button className='rounded p-2 z-10 relative bg-white hover:!text-white text-[15px] !text-primary'>
                   Watch
                 </Button>
@@ -54,10 +62,10 @@ const HappyKids = () => {
             />
           </div>
           <div className='max-w-[490px] mt-20'>
-            <div className='text-5xl font-bold text-secondary'>
+            <div className='sm:text-5xl text-[30px] sm:leading-normal leading-9 font-extrabold text-secondary'>
               kids. Just watch what parents say.
             </div>
-            <p className='text-lg my-5 line-clamp-5'>
+            <p className='lg:text-lg lg:mt-5 my-3 line-clamp-5'>
               None bigger than early education. Parents know that at KinderCare
               we make it our passion to nurture a sense of discovery.
             </p>

@@ -48,6 +48,7 @@ export const ComeOverVariants: { [x: string]: Variants } = {
     hidden: { opacity: 0 },
     show: { opacity: 1 },
   },
+  NO_ANIMATION: {},
 };
 
 export const AgesVariants: { [x: string]: Variants } = {
@@ -63,6 +64,7 @@ export const AgesVariants: { [x: string]: Variants } = {
     hidden: { opacity: 0 },
     show: { opacity: 1 },
   },
+  NO_ANIMATION: {},
 };
 export const WeVariants: { [x: string]: Variants } = {
   RIGHT: {
@@ -173,15 +175,15 @@ export const HeadingVariants: { [x: string]: Variants } = {
   TEXT: {
     hidden: {
       fontSize:
-        typeof window !== 'undefined' && window?.innerWidth > 768
+        typeof window !== 'undefined' && window?.innerWidth > 1024
           ? '240px'
-          : '140px',
+          : '120px',
     },
     show: {
       fontSize:
-        typeof window !== 'undefined' && window?.innerWidth > 768
+        typeof window !== 'undefined' && window?.innerWidth > 1024
           ? '201px'
-          : '100px',
+          : '80px',
       transition: { duration: 3, staggerChildren: 0.5 },
     },
   },
@@ -189,4 +191,5 @@ export const HeadingVariants: { [x: string]: Variants } = {
     hidden: { opacity: 0 },
     show: { opacity: 1 },
   },
+  NO_ANIMATION: {},
 };

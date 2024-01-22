@@ -1,5 +1,6 @@
 import Img from '@/shared/Img';
 import { HeadingVariants } from '@/utils/framerVariants';
+import useWindowDimensions from '@/utils/useWindowDimension';
 import { motion } from 'framer-motion';
 import React from 'react';
 import { BiAbacus } from 'react-icons/bi';
@@ -8,6 +9,7 @@ import { MdSportsMartialArts } from 'react-icons/md';
 import { TbLanguage } from 'react-icons/tb';
 
 const LearningEnvironment = () => {
+  const { width } = useWindowDimensions();
   return (
     <div>
       <Img
@@ -22,18 +24,22 @@ const LearningEnvironment = () => {
         <div className='max-w-[1160px] px-5 mx-auto'>
           <motion.div
             viewport={{ once: false }}
-            variants={HeadingVariants.TEXT}
+            variants={
+              width && width > 768
+                ? HeadingVariants.TEXT
+                : HeadingVariants.NO_ANIMATION
+            }
             whileInView='show'
             initial='hidden'
-            className='md:text-[201px] text-[100px] leading-[264px] font-sensei text-secondary'
+            className='lg:text-[201px] text-[80px] lg:leading-[264px] leading-[80px] font-sensei text-secondary'
           >
             Our
           </motion.div>
-          <div className='max-w-[666px] mx-auto'>
-            <div className='text-5xl font-bold text-secondary'>
+          <div className='max-w-[666px] mx-auto lg:mt-0 mt-5'>
+            <div className='lg:text-5xl text-[30px] lg:leading-normal leading-9 font-extrabold text-secondary'>
               unique learning environment
             </div>
-            <p className='text-lg mt-5 line-clamp-5'>
+            <p className='lg:text-lg lg:mt-5 mt-3 line-clamp-5'>
               sparks physical growth and discovery while our creative
               curriculum, which combines the traditional and the progressive,
               supports each student’s growth.
