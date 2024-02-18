@@ -16,13 +16,11 @@ const ComeOver = () => {
         <motion.div
           viewport={{ once: false }}
           variants={
-            width && width > 768
-              ? HeadingVariants.TEXT
-              : HeadingVariants.NO_ANIMATION
+            !isMobile ? HeadingVariants.TEXT : HeadingVariants.NO_ANIMATION
           }
           whileInView='show'
           initial='hidden'
-          className='md:text-[201px] text-[80px] md:leading-[264px] leading-[80px] font-sensei lg:ml-48 text-secondary'
+          className='md:!text-[201px] text-[80px] md:leading-[264px] leading-[80px] font-sensei lg:ml-48 text-secondary'
         >
           Come
         </motion.div>
@@ -133,7 +131,7 @@ const ComeOver = () => {
             width={408}
             height={66}
             isLocal
-            className='my-14 md:left-40 relative md:block hidden'
+            className='my-14 md:left-40 relative'
           />
         </motion.div>
       </div>

@@ -68,7 +68,7 @@ const Ages = () => {
           width={278}
           height={973}
           isLocal
-          className='absolute md:right-0 right-[105px] -mt-16 sm:-mt-8 lg:mt-0 md:h-[873px] h-[573px]'
+          className='absolute md:right-0 right-[105px] -mt-16 lg:mt-0 md:h-[873px] h-[573px]'
         />
       </motion.div>
       <div className='max-w-[1200px] px-5 mx-auto space-y-16'>
@@ -76,9 +76,7 @@ const Ages = () => {
           <motion.div
             viewport={{ once: false }}
             variants={
-              width && width > 768
-                ? HeadingVariants.TEXT
-                : HeadingVariants.NO_ANIMATION
+              !isMobile ? HeadingVariants.TEXT : HeadingVariants.NO_ANIMATION
             }
             whileInView='show'
             initial='hidden'

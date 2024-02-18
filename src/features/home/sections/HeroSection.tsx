@@ -73,7 +73,7 @@ const HeroSection = () => {
                 </motion.div>
               </div>
 
-              <div className='relative max-[640px]:scale-75 z-10'>
+              <div className='relative max-[640px]:scale-75'>
                 <motion.div
                   viewport={{ once: false }}
                   variants={HeroVariants.BUTTON}
