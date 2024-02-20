@@ -58,7 +58,17 @@ const BookVisit = () => {
         isLocal
         className="w-full h-7 -mt-6 -rotate-180 object-cover"
       />
-      <form name="contact1" method="POST" data-netlify="true">
+      <form
+        name="contact1"
+        onSubmit="submit"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="hhghjj" />
+        <div hidden>
+          <input name="bot-field"/>
+        </div>
         <p>
           <label>
             Your Name: <input type="text" name="name" />
@@ -91,12 +101,11 @@ const BookVisit = () => {
       <div className="my-24 px-5 max-w-[1000px] mx-auto">
         <form
           className="grid grid-cols-12 gap-x-5 gap-y-3"
-          data-netlify="true"
-          name="contact"
+          onSubmit="submit"
           method="POST"
-          // onSubmit="submit"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
         >
-
           <Input
             placeholder="First Name"
             type="text"
