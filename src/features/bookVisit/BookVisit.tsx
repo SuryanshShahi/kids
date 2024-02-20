@@ -60,7 +60,6 @@ const BookVisit = () => {
       />
       <form
         name="contact1"
-        onSubmit="submit"
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
