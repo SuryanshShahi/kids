@@ -4,7 +4,7 @@ import React from 'react';
 
 const Index = () => {
   return (
-    <PageWrapper isNavbar wrapperClass='!px-0 lg:!px-0'>
+    <PageWrapper isNavbar>
       <BookVisit />
     </PageWrapper>
   );
