@@ -13,7 +13,7 @@ const useBookVisit = () => {
     checkbox: false,
     dob: "",
     message: "",
-    branch: "",
+    branch: "Within a month",
   };
 
   const {
