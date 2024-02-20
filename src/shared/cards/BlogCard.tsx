@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import { GoPlus } from 'react-icons/go';
 import { convertDate } from '@/utils/constant';
@@ -6,15 +6,17 @@ import { useRouter } from 'next/router';
 
 const BlogCard = ({ data, idx }: { data: any; idx: string }) => {
   const router = useRouter();
+  // let elem =document.getElementById(idx).style.backgroundColor
+ 
   return (
     <div
       className='bg-white relative group cursor-pointer rounded-3xl shadow-[rgba(0,0,0,0.08)_0px_14px_40px_0px] max-w-[370px]'
-      onMouseOver={() =>
-        (document.getElementById(idx).style.backgroundColor = data?.color)
-      }
-      onMouseOut={() =>
-        (document.getElementById(idx).style.backgroundColor = '#faf5f2')
-      }
+      // onMouseOver={() =>
+      //   (elem = data?.color)
+      // }
+      // onMouseOut={() =>
+      //   (elem = '#faf5f2')
+      // }
       onClick={() => router.push(`/blog/${idx}`)}
     >
       <div className=''>
