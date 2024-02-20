@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className='bg-white h-20 flex justify-between md:px-8 px-5 items-center'>
         <div className='flex items-center gap-x-10'>
           <Img
-            src={'/images/headerLogo.png'}
+            src={'/images/logo.png'}
             alt='phone'
             width={150}
             height={45}

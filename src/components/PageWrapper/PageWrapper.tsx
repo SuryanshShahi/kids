@@ -5,6 +5,7 @@ import { IoIosArrowUp } from 'react-icons/io';
 import Head from 'next/head';
 import { metaContent } from '@/utils/content';
 import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 interface IPageWraps {
   wrapperClass?: string;
   isNavbar?: boolean;
@@ -28,6 +29,7 @@ const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
   typeof window !== 'undefined' && window.addEventListener('scroll', slideNav);
   return (
     <Fragment>
+      <ToastContainer />
       <Head>
         <title>{seo?.metaTitle ?? metaContent.TITLE}</title>
         <meta
