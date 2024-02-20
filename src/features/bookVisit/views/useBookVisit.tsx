@@ -1,6 +1,7 @@
 // import { signInSchema } from "@/schemas";
 import { contactUs } from '@/utils/schemas';
 import { useFormik } from 'formik';
+import { toast } from 'react-toastify';
 
 const useBookVisit = () => {
   const initialValues = {
@@ -28,7 +29,20 @@ const useBookVisit = () => {
     initialValues: initialValues,
     validationSchema: contactUs,
     onSubmit: async (values) => {
-      console.log(values);
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(values as any).toString(),
+      })
+        .then(() =>
+          toast.success("Visit Booked Successfully!", {
+            position: 'top-right',
+            className: "toast-login",
+            hideProgressBar: true,
+            autoClose: 3000,
+          })
+        )
+        .catch((error) => alert(error));
     },
   });
 

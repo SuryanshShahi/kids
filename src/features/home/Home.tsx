@@ -15,7 +15,7 @@ const Home = () => {
       <LearningEnvironment />
       <ComeOver />
       {/* <HappyKids /> */}
-      <QuickActions />
+      {/* <QuickActions /> */}
     </div>
   );
 };

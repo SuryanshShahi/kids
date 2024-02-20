@@ -4,7 +4,7 @@ import Footer from '../Footer/Footer';
 import { IoIosArrowUp } from 'react-icons/io';
 import Head from 'next/head';
 import { metaContent } from '@/utils/content';
-
+import 'react-toastify/dist/ReactToastify.css';
 interface IPageWraps {
   wrapperClass?: string;
   isNavbar?: boolean;
