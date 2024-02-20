@@ -58,6 +58,36 @@ const BookVisit = () => {
         isLocal
         className="w-full h-7 -mt-6 -rotate-180 object-cover"
       />
+      <form name="contact1" method="POST" data-netlify="true">
+        <p>
+          <label>
+            Your Name: <input type="text" name="name" />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your Email: <input type="email" name="email" />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your Role:{" "}
+            <select name="role[]" multiple>
+              <option value="leader">Leader</option>
+              <option value="follower">Follower</option>
+            </select>
+          </label>
+        </p>
+        <p>
+          <label>
+            Message: <textarea name="message"></textarea>
+          </label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
+
       <div className="my-24 px-5 max-w-[1000px] mx-auto">
         <form
           className="grid grid-cols-12 gap-x-5 gap-y-3"
@@ -66,7 +96,6 @@ const BookVisit = () => {
           method="POST"
           // onSubmit="submit"
         >
-          <input type="hidden" name="form-name" value="contact" />
 
           <Input
             placeholder="First Name"
