@@ -100,7 +100,6 @@ const BookVisit = () => {
       <div className="my-24 px-5 max-w-[1000px] mx-auto">
         <form
           className="grid grid-cols-12 gap-x-5 gap-y-3"
-          onSubmit="submit"
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
