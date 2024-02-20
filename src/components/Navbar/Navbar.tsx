@@ -1,13 +1,12 @@
 import Button from '@/shared/Button/Button';
 import Img from '@/shared/Img';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { FaPhoneAlt } from 'react-icons/fa';
-import useNavbar from './views/useNavbar';
-
 const Navbar = () => {
-  const { router } = useNavbar();
+  const router = useRouter();
   return (
-    <div className='top-0 sticky w-full z-50' id='navbar'>
+    <div className='top-0 sticky w-full z-50'>
       <div className='bg-white h-20 flex justify-between md:px-8 px-5 items-center'>
         <div className='flex items-center gap-x-10'>
           <Img
@@ -51,7 +50,7 @@ const Navbar = () => {
         width={1440}
         height={28}
         isLocal
-        className='w-full h-7 -mt-[2px] object-cover'
+        className='w-full h-7 -mt-[1px] object-cover'
       />
     </div>
   );

@@ -17,9 +17,7 @@ const ComeOver = () => {
         <motion.div
           viewport={{ once: false }}
           variants={
-            width && width > 768
-              ? HeadingVariants.TEXT
-              : HeadingVariants.NO_ANIMATION
+            !isMobile ? HeadingVariants.TEXT : HeadingVariants.NO_ANIMATION
           }
           whileInView="show"
           initial="hidden"

@@ -16,7 +16,6 @@ const config: Config = {
     },
     fontFamily: {
       sensei: 'sensei',
-      catamaran: 'catamaran',
     },
   },
   plugins: [],
