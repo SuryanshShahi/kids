@@ -15,21 +15,7 @@ const BookVisit = () => {
     handleSubmit,
     setFieldValue,
   } = useBookVisit();
-  // const handleSubmit1 = (event) => {
-  //   event.preventDefault();
 
-  //   const myForm = event.target;
-  //   const formData = new FormData(myForm);
-  //   console.log(myForm);
-
-  //   fetch("/", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //     body: new URLSearchParams(formData).toString(),
-  //   })
-  //     .then(() => alert("/thank-you/"))
-  //     .catch((error) => alert(error));
-  // };
   return (
     <div className="pb-40">
       <div className="bg-[#FFF5DE] w-full h-[384px] -mt-6 flex items-center justify-between overflow-hidden">
@@ -58,72 +44,20 @@ const BookVisit = () => {
         isLocal
         className="w-full h-7 -mt-6 -rotate-180 object-cover"
       />
-      <form
-        name="contact1"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="form-name" value="hhghjj" />
-        <div hidden>
-          <input name="bot-field"/>
-        </div>
-        <p>
-          <label>
-            Your Name: <input type="text" name="name" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your Email: <input type="email" name="email" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your Role:{" "}
-            <select name="role[]" multiple>
-              <option value="leader">Leader</option>
-              <option value="follower">Follower</option>
-            </select>
-          </label>
-        </p>
-        <p>
-          <label>
-            Message: <textarea name="message"></textarea>
-          </label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
 
       <div className="my-24 px-5 max-w-[1000px] mx-auto">
-        <form
-          className="grid grid-cols-12 gap-x-5 gap-y-3"
-          method="POST"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        >
+        <div className="grid grid-cols-12 gap-x-5 gap-y-3">
           <Input
-            placeholder="First Name"
+            placeholder="Name"
             type="text"
-            name="fname"
-            value={values.fname}
+            name="name"
+            value={values.name}
             onChange={handleChange}
             onBlur={handleBlur}
-            errorMessage={errors.fname && touched.fname ? errors.fname : ""}
+            errorMessage={errors.name && touched.name ? errors.name : ""}
             wrapperClass="sm:col-span-6 col-span-12"
           />
-          <Input
-            placeholder="Last Name"
-            type="text"
-            name="lname"
-            value={values.lname}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            errorMessage={errors.lname && touched.lname ? errors.lname : ""}
-            wrapperClass="sm:col-span-6 col-span-12"
-          />
+
           <Input
             placeholder="Email Address"
             type="email"
@@ -132,18 +66,9 @@ const BookVisit = () => {
             onChange={handleChange}
             onBlur={handleBlur}
             errorMessage={errors.email && touched.email ? errors.email : ""}
-            wrapperClass="col-span-12"
-          />
-          <Input
-            placeholder="Zip Code"
-            type="text"
-            name="code"
-            value={values.code}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            errorMessage={errors.code && touched.code ? errors.code : ""}
             wrapperClass="sm:col-span-6 col-span-12"
           />
+
           <Input
             placeholder="Phone Number"
             type="tel"
@@ -154,17 +79,30 @@ const BookVisit = () => {
             errorMessage={errors.phone && touched.phone ? errors.phone : ""}
             wrapperClass="sm:col-span-6 col-span-12"
           />
-          <div className="col-span-12">
+          <Input
+            placeholder="childName"
+            type="text"
+            name="childName"
+            value={values.childName}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            errorMessage={
+              errors.childName && touched.childName ? errors.childName : ""
+            }
+            wrapperClass="sm:col-span-6 col-span-12"
+          />
+
+          <div className="sm:col-span-6 col-span-12">
             <div className="text-[15px] text-secondary">
               What is your child's date of birth?
             </div>
             <Input
               type="date"
-              name="date"
-              value={values.date}
+              name="dob"
+              value={values.dob}
               onChange={handleChange}
               onBlur={handleBlur}
-              errorMessage={errors.date && touched.date ? errors.date : ""}
+              errorMessage={errors.dob && touched.dob ? errors.dob : ""}
             />
           </div>
           <div className="sm:col-span-6 col-span-12 space-y-1">
@@ -172,10 +110,10 @@ const BookVisit = () => {
               We'd like to start in...
             </div>
             <select
-              onChange={(e) => setFieldValue("duration", e.target.value)}
-              value={values.duration}
+              onChange={(e) => setFieldValue("branch", e.target.value)}
+              value={values.branch}
               className={`border border-neutral-300 rounded-md w-full p-3 ${
-                errors.duration ? "border-[1.5px] border-red-400" : ""
+                errors.branch ? "border-[1.5px] border-red-400" : ""
               }`}
             >
               <option>Within a month</option>
@@ -185,32 +123,15 @@ const BookVisit = () => {
               <option>9 months+</option>
               <option>Unsure at this time</option>
             </select>
-            {errors.duration &&
-            touched.duration &&
-            errors?.duration.length > 0 ? (
+            {errors.branch && touched.branch && errors?.branch.length > 0 ? (
               <p className="text-right text-xs text-red-400">
-                {errors?.duration}
+                {errors?.branch}
               </p>
             ) : (
               <p className="text-right text-[10px] text-white">.</p>
             )}
           </div>
-          <div className="sm:col-span-6 col-span-12">
-            <div className="text-[15px] text-secondary">
-              When would you like to visit?
-            </div>
-            <Input
-              placeholder="Choose an available date"
-              type="date"
-              name="visitDate"
-              value={values.visitDate}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              errorMessage={
-                errors.visitDate && touched.visitDate ? errors.visitDate : ""
-              }
-            />
-          </div>
+
           <TextArea
             placeholder="Questions? Anything you'd like us to know about your family?"
             rows={5}
@@ -224,8 +145,7 @@ const BookVisit = () => {
             }
             wrapperClass="col-span-12"
           />
-          <input type="submit" />
-        </form>
+        </div>
         <div className="flex items-center gap-x-3">
           <Input
             type="checkbox"
@@ -239,12 +159,12 @@ const BookVisit = () => {
             By submitting this form, you agree to the Skole privacy notice.
           </div>
         </div>
-        {/* <Button
+        <Button
           onClick={handleSubmit}
           className="rounded p-2 z-10 relative mt-10"
         >
           Submit my information
-        </Button> */}
+        </Button>
       </div>
     </div>
   );
