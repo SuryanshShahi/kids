@@ -9,25 +9,25 @@ const AboutUs = () => {
       icon: "/images/facility1.png",
       title: "State-of-the-Art Building",
       description:
-        "Enjoy learning in our mordern, air-conditioned facility, fostering focus and exploration.",
+        "Enjoy learning in our modern, air-conditioned facility, fostering focus and exploration.",
     },
     {
       icon: "/images/facility2.png",
-      title: "State-of-the-Art Building",
+      title: "Secure Transport",
       description:
-        "Enjoy learning in our mordern, air-conditioned facility, fostering focus and exploration.",
+        "Travel safely in our air-conditioned school buses, ensuring a comfortable journey to and from school.",
     },
     {
       icon: "/images/facility3.png",
-      title: "State-of-the-Art Building",
+      title: "Door-to-Door Service",
       description:
-        "Enjoy learning in our mordern, air-conditioned facility, fostering focus and exploration.",
+        "Benefit from hassle-free pickup and drop-off at your doorstep for added convenience.",
     },
     {
       icon: "/images/facility4.png",
-      title: "State-of-the-Art Building",
+      title: "Spacious Play Areas",
       description:
-        "Enjoy learning in our mordern, air-conditioned facility, fostering focus and exploration.",
+        "Explore and play in our expansive outdoor and indoor spaces, promoting physical activity and socialisation.",
     },
   ];
   return (
@@ -50,7 +50,7 @@ const AboutUs = () => {
           width={1440}
           height={160}
           isLocal
-          className="w-full h-[160px] object-cover z-40 relative mt-ato"
+          className="w-full h-[160px] object-cover z-40 relative mt-ato -mb-1"
         />
       </div>
       <div className="md:space-y-32 space-y-24 py-20">
@@ -60,15 +60,13 @@ const AboutUs = () => {
               LITTLE SOMETHING
             </div>
             <div className="font-black md:text-[54px] text-4xl md:leading-[64px]">
-              Climbing, jumping,<br></br>
-              <span className="text-[#ffb129]">sliding, crawling</span>
+              Empowering Minds with<br></br>
+              <span className="text-[#ffb129]">VR at kiddle Preschool</span>
             </div>
             <p className="text-sm leading-6">
-              With indoor playgrounds, state-of-the-art indoor rock climbing
-              arenas and fully-enclosed toddler arenas, Bambino is the place to
-              come for hours of family entertainment. Parents can join in, or
-              just sit back and enjoy some great quality food and specialty
-              coffee from our restaurant.
+              Ignite your child's imagination and curiosity with immersive
+              experiences where virtual reality opens doors to limitless
+              learning adventures.
             </p>
             <button className="bg-[#21ac94] hover:bg-[#21ac94]/70 duration-500 text-white px-8 font-bold text-xl py-3 h-fit min-w-fit rounded-full rounded-ss-none">
               Book Now
@@ -76,7 +74,7 @@ const AboutUs = () => {
           </div>
           <div className="bg-white p-8 rounded-3xl space-y-5 w-fit">
             <div className="text-2xl font-black leading-6 w-[320px]">
-              Something for everyone
+              Seamless Technology
             </div>
             {[
               "Bus-racking system for secure transportation.",
